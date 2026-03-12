@@ -154,25 +154,28 @@ vector = response.data[0].embedding  # 一个 1536 维的向量
 # 例如: [0.012, -0.034, 0.056, ..., 0.078]
 ```
 
-### 主流 Embedding 模型
+### 主流 Embedding 模型（2025-2026）
 
-| 模型 | 提供方 | 维度 | 特点 |
-|------|--------|------|------|
-| text-embedding-3-small | OpenAI | 1536 | 性价比高，适合通用场景 |
-| text-embedding-3-large | OpenAI | 3072 | 更精确，成本更高 |
-| BGE-large-zh | BAAI | 1024 | 中文效果好，开源免费 |
-| Jina-embeddings-v3 | Jina | 1024 | 支持多语言，长文本友好 |
-| Voyage-3 | Voyage | 1024 | 检索质量优秀 |
+根据 [MTEB 排行榜](https://huggingface.co/spaces/mteb/leaderboard)的最新数据：
+
+| 模型 | 提供方 | 维度 | 价格（每百万 token） | 特点 |
+|------|--------|------|---------------------|------|
+| **Gemini Embedding** | Google | 768 | 按云服务计费 | MTEB 排名靠前，多语言支持 |
+| **Qwen3-Embedding-8B** | 阿里 | 4096 | **免费（开源）** | 开源最强，中文优秀 |
+| **Voyage-3-large** | Voyage | 1536 | ~$0.12 | 检索质量顶级，前 2 亿 token 免费 |
+| **text-embedding-3-small** | OpenAI | 1536 | $0.02 | 性价比高，生态完善 |
+| **text-embedding-3-large** | OpenAI | 3072 | $0.13 | 更精确，适合高要求场景 |
+| **BGE-M3** | 智源 | 1024 | **免费（开源）** | 中文最佳，多语言多粒度 |
 
 ### 怎么选？
 
-**通用场景**：OpenAI text-embedding-3-small，省心
+**中文为主**：BGE-M3 或 Qwen3-Embedding，开源免费，中文效果最好
 
-**中文为主**：BGE-large-zh，开源免费，中文效果好
+**通用场景 + 省心**：OpenAI text-embedding-3-small，API 简单，生态成熟
 
-**成本敏感**：用开源模型本地部署，不调 API
+**精度要求高**：Voyage-3-large，检索质量顶级
 
-**精度要求高**：多试几个，用你的数据做对比测试
+**成本敏感 + 可自建**：Qwen3-Embedding 或 BGE-M3，完全开源，本地部署
 
 **关键点：Embedding 模型决定了"相似"的定义，选错了会影响整个 RAG 系统的效果。**
 
