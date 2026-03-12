@@ -303,12 +303,3 @@ Top 5 最相似的文档:
 3. 知识库每周更新，向量需要重新生成吗？
 
 这些问题没有标准答案，但思考它们会让你对 RAG 的边界有更深的理解。
-
----
-
-## 延伸阅读
-
-- [Word2Vec 论文](https://arxiv.org/abs/1301.3781)（Embedding 的起点）
-- [BERT: Pre-training of Deep Bidirectional Transformers](https://arxiv.org/abs/1810.04805)（现代 Embedding 的基础）
-- [OpenAI Embeddings Guide](https://platform.openai.com/docs/guides/embeddings)
-- [BGE Embeddings](https://huggingface.co/BAAI/bge-large-zh)（中文 Embedding 推荐）
