@@ -28,6 +28,8 @@
 
 **这就是 In-Context Learning 的本质：不是"学习"新知识，而是通过上下文"定位"到模型已有的某个能力模式。**
 
+![In-Context Learning：输入作为"定位器"](../../assets/images/04-01-in-context-learning.jpeg)
+
 提示词工程，就是在做这件事：**用正确的方式"说话"，让模型的注意力落在正确的地方。**
 
 ---
@@ -200,6 +202,8 @@ const evens = numbers.filter(n => n % 2 === 0);
 用户的问题
 ```
 
+![例子的位置影响注意力权重](../../assets/images/04-02-example-ordering.jpeg)
+
 ### 反例：糟糕的例子比没有例子更糟
 
 ```
@@ -329,6 +333,8 @@ User Prompt: 重构这段代码
 - 让模型"学会"一个全新的任务（只能激活相似的能力）
 
 **提示词是"方向盘"，不是"引擎"。**
+
+![提示词工程能做与不能做的边界](../../assets/images/04-03-prompt-boundaries.jpeg)
 
 ---
 
